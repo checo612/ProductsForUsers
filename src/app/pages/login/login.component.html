@@ -1,0 +1,66 @@
+<!-- Default form login -->
+<div class="container-fluid background">
+  <div class="row">
+    <div class="col-4">
+        
+    </div>
+    <div class="col-4">
+        <h2 class= "mt-5 text-white text-center">ProductXpertis</h2>
+        <form class="text-center pb-4"> 
+            <p class="h4 mb-4 text-white">Sign in</p>
+          
+            <!-- Email -->
+            <div class="form-group">
+            <input type="email" [(ngModel)]="user.email" name="email" class="form-control mb-4" placeholder="E-mail">
+            </div>
+            <!-- Password -->
+            <div class="form-group">
+            <input type="password" [(ngModel)]="user.password" name="password" class="form-control mb-4" placeholder="Password">
+            </div>
+            <div class="d-flex justify-content-around">
+                <div>
+                    <!-- Remember me -->
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                        <label class="custom-control-label text-white" for="defaultLoginFormRemember">Remember me</label>
+                    </div>
+                </div>
+                <div>
+                    <!-- Forgot password -->
+                    <a href="">Forgot password?</a>
+                </div>
+            </div>
+          
+            <!-- Sign in button -->
+            <button class="btn btn-info btn-block my-4 text-white" type="submit" (click)="signThisUser()">Sign in</button>
+          
+            <!-- Register -->
+            <p class="text-white">Not a member?</p>
+                <!-- <div>
+                    <button class="btn btn-info btn-block my-4 text-white" type="submit"  (click)="createThisUser()">Register</button>
+                </div> -->
+                <div>
+                    <app-modal-create></app-modal-create>
+                </div>
+            
+          
+            <!-- Social login -->
+            <p class="text-white">or sign in with:</p>
+          
+            <a role="button" class="text-white mx-2">
+                <i class="fab fa-facebook-square"></i>
+            </a>
+            <a role="button" class="text-white mx-2">
+                <i class="fab fa-twitter-square"></i>
+            </a>
+            <a role="button" class="text-white mx-2">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a role="button" class="text-white mx-2">
+                <i class="fab fa-git-square"></i>
+            </a>
+          
+          </form>
+          <!-- Default form login -->
+    </div>
+

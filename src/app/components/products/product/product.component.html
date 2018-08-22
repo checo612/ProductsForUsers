@@ -1,0 +1,34 @@
+<div class="card mt-5">
+  <div class="card-body">
+    <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)" >
+      <div class="form-group">
+        <input type="hidden" name="key" #key="ngModel" [(ngModel)]="productChild.key">
+         <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="productChild.name" placeholder="Add product name"> <!-- selectedProduct nos ayuda armar el objeto Product para despues subirlo como productForm-->
+      </div>
+
+      <div class="form-group">
+          <input type="text" class="form-control" name="category" #category="ngModel" [(ngModel)]="productChild.category" placeholder="Add product category">
+        </div>
+        
+        <div class="form-group">
+            <input type="text" class="form-control" name="location" #location="ngModel" [(ngModel)]="productChild.location" placeholder="Add product location">
+          </div>
+
+          <div class="form-group">
+              <input type="number" class="form-control" name="price" #price="ngModel" [(ngModel)]="productChild.price" placeholder="Add product price">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit" *ngIf="productChild.key==null else modify"><i class="fas fa-plus-circle"></i> Add product</button>
+            </div>
+            <ng-template #modify>
+                <button class="btn btn-success" type="submit"><i class="fas fa-pen"></i> Modify</button>
+            </ng-template>
+
+            <div class="form-group">
+                <button class="btn btn-secondary" type="reset" (click)="resetForm(productForm)"><i class="fas fa-sync-alt"> Reset</i></button>
+            </div>         
+    </form>
+  </div>
+</div>
+
+

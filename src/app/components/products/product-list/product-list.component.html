@@ -1,0 +1,28 @@
+<div class="card mt-5">
+  <div class="card-body">
+    <h6 class="text-center">List of Products</h6>
+    <table class="table table-sm table-hover">
+      <tbody>
+
+        <app-loading-spinner *ngIf="loading"></app-loading-spinner>
+        <tr class="row" *ngFor="let product of productList">
+          <td class="col-md-2">{{product.name}}</td>
+          <td class="col-md-2">{{product.category}}</td>
+          <td class="col-md-2">{{product.location}}</td>
+          <td class="col-md-2">{{product.price | currency:'':'symbol' :'1.2-3'}}</td>
+          <td class="col-md-2">
+            <a class="btn btn-secondary text-white text-center m-1" (click)="editProduct(product)">
+              <i class="fas fa-edit"></i>
+            </a>
+            <a class="btn btn-danger text-white text-center" (click)="deleteProduct(product.key)">
+                <i class="fas fa-trash-alt"></i>
+              </a>
+          </td>
+          <td class="col-md-2">
+            
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

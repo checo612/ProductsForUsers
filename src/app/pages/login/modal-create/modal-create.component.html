@@ -1,0 +1,29 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Create User</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <!-- Name -->
+      <div class="form-group">
+          <input type="name" [(ngModel)]="user.name" name="name" class="form-control mb-4" placeholder="Name">
+          </div>
+      <!-- Email -->
+      <div class="form-group">
+        <input type="email" [(ngModel)]="user.email" name="email" class="form-control mb-4" placeholder="E-mail">
+        </div>
+        <!-- Password -->
+        <div class="form-group">
+        <input type="password" [(ngModel)]="user.password" name="password" class="form-control mb-4" placeholder="Password">
+        </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-info btn-block my-4 text-white" (click)="c(createThisUser())">Register</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-info btn-block my-4 text-white" (click)="open(content)">Register</button>
